@@ -1,0 +1,102 @@
+//Set Size of Icon
+$iconSize: 40px; //width-height/font-size
+
+//Social Media Map
+//Font Awesome Icons and Background Colors
+//Try adding by Font Awesome class name
+$fa: (
+  facebook:     ( icon: "\f39e", bgcolor: #3b5998 ),
+  twitter:      ( icon: "\f099", bgcolor: #00aced ),
+  pinterest:    ( icon: "\f231", bgcolor: #cb2027 ),
+  youtube:      ( icon: "\f167", bgcolor: #bb0000 ),
+  google-plus:  ( icon: "\f0d5", bgcolor: #dd4b39 )
+);
+
+//Creates Mixin to use any Font Awesome Class Icon Name in your $fa Map
+@mixin social__names($name) {
+  &-#{$name} {
+    background: map-get(map-get($fa, $name), bgcolor);
+    &:before {
+      content: map-get(map-get($fa, $name), icon);
+    }
+    &:hover {
+      background: lighten(map-get(map-get($fa, $name), bgcolor), 10%);
+    }
+  }
+}
+
+//Simple Mixin to loop through all of the Social Site Names and Output them
+@mixin social() {
+  @each $item, $name in $fa {
+    @include social__names($item);
+  }
+}
+
+//Social Media Wrap (ul li a)
+@mixin social-icons {
+  .social {
+    &-wrap {
+      @extend %clearfix;
+      margin: 0; 
+      padding: 0;
+    }
+    &-item {
+      list-style: none;
+      float: left;
+      a {
+        @extend %fade;
+        font-size: ($iconSize / 2);
+        text-decoration: none;
+        display: block;
+        width: $iconSize; height: $iconSize;
+        position: relative;
+        cursor: pointer;
+        &:before { //Calls Font Awesome & Centers Icon
+          font-family: "Font Awesome 5 Brands";
+          font-size: inherit; 
+          color: #fff;
+          display: block;
+          position: absolute; left: 50%; top: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+    &-link {
+      @include social(); //Creates all icons dynamically
+  	  &-text {
+  	  	display: none;
+  	  }
+    }
+  }
+}
+
+// Output Social Media Icon Styles
+@include social-icons;
+
+//<ul class="social-wrap">
+//  <li class="social-item">
+//    <a class="social-link-facebook" href="">
+//      <span class="social-link-text">facebook</span>
+//    </a>
+//  </li>
+//  <li class="social-item">
+//    <a class="social-link-twitter" href="">
+//      <span class="social-link-text">twitter</span>
+//    </a>
+//  </li>
+//  <li class="social-item">
+//    <a class="social-link-pinterest" href="">
+//      <span class="social-link-text">pinterest</span>
+//    </a>
+//  </li>
+//  <li class="social-item">
+//    <a class="social-link-youtube" href="">
+//      <span class="social-link-text">youtube</span>
+//    </a>
+//  </li>
+//  <li class="social-item">
+//    <a class="social-link-google-plus" href="">
+//      <span class="social-link-text">google-plus</span>
+//    </a>
+//  </li>
+//</ul>

@@ -1,0 +1,71 @@
+// Custom Bootstrap Buttons
+@mixin custom-bootstrap-btns {
+  //Button Text Color
+  %lightTextColor { color: darken(#fff, 50%); }
+  %darkTextColor { color: #fff; }
+  //Button Styles
+  .btn {
+    @extend %fade;
+    $buttonColor: darken(desaturate($primaryColor, 50%), 30%);
+    font: 14px $baseHead; 
+    @extend %lightTextColor; 
+    text-transform: uppercase;
+    padding: 15px 45px; 
+    margin: 0;
+    border: none;
+    background: $buttonColor;
+    position: relative;
+    display: inline-block;
+    @include border-radius(5px);
+    &:hover {
+      @extend %darkTextColor;
+      background: lighten($primaryColor, 20%);
+      text-decoration: none;
+    }
+    &:focus {
+      @extend %lightTextColor;
+      outline: none;
+    }
+  }
+  //Button Colors
+  $buttonColors: 
+      primary #005888, 
+      info #49AFCD, 
+      success #5BB75B, 
+      warning #FAA732, 
+      danger #DA4F49, 
+      inverse #363636, 
+      primaryColor $primaryColor, 
+      secondaryColor $secondaryColor, 
+      tertiaryColor $tertiaryColor;
+  @each $className in $buttonColors {
+    .btn-#{nth($className, 1)} {
+      $buttonColor: nth($className, 2);
+      @extend %darkTextColor;
+      background: $buttonColor;
+      &:hover {
+        @extend %darkTextColor;
+        background: lighten($buttonColor, 10%);
+      }
+    }
+  }
+  //Button Sizes
+  .btn-large {
+    font-size: 18px;
+    padding: 12px 22px 10px;
+  }
+  .btn-small {
+    font-size: 11px;
+    padding: 8px 16px 6px;
+  }
+  .btn-mini {
+    font-size: 9px;
+    padding: 7px 12px 5px;
+  }
+  .btn-link {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+  }
+}

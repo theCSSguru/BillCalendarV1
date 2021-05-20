@@ -1,0 +1,273 @@
+// Layout
+.bc {
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: darken($brandDark, 5%);
+    position: relative;
+    z-index: 2;
+    &-menu {
+      $iconSize: 2rem;
+      &-toggle {
+        width: $iconSize / 1.25;
+        height: $iconSize;
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin: 0 ($iconSize / 2) 0 ($iconSize / 6);
+        &:active,
+        &:focus,
+        &:hover {
+          outline: none;
+        }
+        @media (max-width: $breakpointMD) {
+          margin-right: ($iconSize / 6);
+        }
+      }
+      &-icon {
+        &:hover {
+          .bc-header-menu-icon-bar {
+            opacity: 1;
+          }
+        }
+        &-bar {
+          @extend %fade;
+          display: block;
+          opacity: 0.25;
+          width: 100%;
+          height: $iconSize / 8;
+          margin: ($iconSize / 8) 0;
+          background-color: $white;
+        }
+        &-text {
+          display: none;
+        }
+      }
+    }
+    &-logo {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &-wrap {
+        display: flex;
+        align-items: center;
+        flex-basis: calc(100%/3);
+      }
+      @extend %fade;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.65rem;
+      font-weight: 200;
+      color: $white;   
+      letter-spacing: 0.05rem;   
+      line-height: normal;
+      opacity: 0.5;
+      cursor: default;
+      span {
+        margin-left: 0.15rem;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      strong {
+        font-weight: 700;
+      }
+      @media (max-width: $breakpointMD) {
+        display: none;
+      }
+      &-icon {
+        $iconSize: 1rem;
+        position: relative;
+        top: $iconSize / 6;
+        z-index: 1;
+        &-tab {
+          border: ($iconSize / 12) $brandDark solid;
+          border-radius: $iconSize / 6;
+          width: $iconSize / 4;
+          height: $iconSize / 2.75;
+          background-color: $white;
+          position: absolute;
+          top: -($iconSize / 5);
+          left: $iconSize / 6;
+          z-index: 2;          
+          &:nth-child(2) {
+            left: $iconSize / 1.75;
+          }
+        }
+        &-calendar {
+          border: ($iconSize / 12) $white solid;
+          border-radius: $iconSize / 6;
+          width: $iconSize;
+          height: $iconSize;
+          position: relative;
+          z-index: 1;
+          &-header {
+            background-color: $white;
+            height: $iconSize / 6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+          }
+        }
+        &-dollar-sign {
+          color: $white;
+          font-size: $iconSize / 1.5;
+          line-height: normal;
+          position: absolute;
+          top: $iconSize / 8;
+          left: $iconSize / 5;
+          z-index: 2;
+        }
+      }
+    }
+    &-month {
+      $arrowSize: 0.5rem;
+      font-weight: 700;
+      margin-right: 0.25rem;
+      &-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: calc(100%/3);
+        font-size: 1.75rem;
+        color: $white;
+        line-height: normal;  
+        @media (max-width: $breakpointSM) {
+          font-size: 1.5rem;
+        }
+      }
+      &-prev,
+      &-next {
+        @extend %fade;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        cursor: pointer;
+        opacity: 0.25;
+        margin: 0 ($arrowSize * 1.5);
+        &:hover,
+        &:focus,
+        &:active {
+          opacity: 0.75;
+        }
+        span {
+          display: none;
+        }
+      }
+      &-prev {
+        border-width: $arrowSize ($arrowSize * 1.5) $arrowSize 0;
+        border-color: transparent $white transparent transparent;
+      }
+      &-next {
+        border-width: $arrowSize 0 $arrowSize ($arrowSize * 1.5);
+        border-color: transparent transparent transparent $white;
+      }
+    }
+    &-stats {
+      display: flex;
+      flex-basis: calc(100%/3);
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      line-height: normal;
+      @media (max-width: $breakpointMD) {
+        font-size: 0.75rem;
+      }
+      li {
+        list-style: none;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          cursor: default;
+        }
+        @media (max-width: $breakpointMD) {
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-left: 0;
+        }
+      }
+      span {
+        color: $white;
+      }
+      &-deposits {
+        background-color: $brandDeposit;
+      }
+      &-savings {
+        background-color: $brandSavings;
+      }
+      &-bills {
+        background-color: $brandBill;
+      }
+      &-income {
+        background-color: $brandIncome;
+      }
+    }
+  }
+  &-mobile-list {
+    @extend %scrollbar;
+    display: none;
+    padding: 1.5rem;
+    max-height: 75vh;
+    overflow-y: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background-color: rgba(darken($brandDark, 10%), 0.9);
+    border-bottom: 2px var(--primary) solid;
+    @media (max-width: $breakpointMD) {
+      display: block;
+    }
+    .badge {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .bc-calendar-day-income {
+      margin-bottom: 0.75rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-date {
+      font-size: 2rem;
+      color: $white;
+      line-height: normal;
+      margin-bottom: 0.5em;
+    }
+    &-actions {
+      padding: 0;
+      text-align: right;
+    }
+  }
+  &-mobile-day-selected {
+    @media (max-width: $breakpointMD) {
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border: 2px var(--primary) solid !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+// Mixins
+
+// Background Image Mixin for fast backghround images
+@mixin bg($img, $extention, $top: null, $left: null, $repeat: null, $scroll: null, $color: null) {
+  background: url('../images/layout/#{$img}.#{$extention}') $top $left $repeat $scroll $color;
+}
+
+// Placeholder Mixin (mostly for color)
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content;}
+  &:-moz-placeholder {@content;}
+  &::-moz-placeholder {@content;}
+  &:-ms-input-placeholder {@content;}
+}

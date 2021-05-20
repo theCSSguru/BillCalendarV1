@@ -1,0 +1,47 @@
+// Placeholders
+
+// Centers Block Elements
+%baseCenter {
+  margin: 0 auto;
+}
+
+// Psuedo Before and After Chunk
+%ba {
+  display: block; 
+  content: "";
+}
+
+// Quick Text Indent for Images
+%ti {
+  text-indent: -9999px;
+  text-align: left;
+  display: block;
+}
+
+// Clearfix if needed
+%clearfix {
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+// Fade nicley for anything
+%fade {
+  transition: all 0.3s ease-in-out;
+}
+
+// Custom Scrollbar
+%scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1rem darken($brandDark, 20%);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: lighten($brandDark, 20%);
+    outline: 1px solid darken($brandDark, 20%);
+  }
+}

@@ -1,0 +1,309 @@
+// // Navigation
+// $buttonSize: 20px; // even numbers work best
+// $navigationColor: $primaryColor;
+
+// // Desktop and Up
+// @media (min-width: $breakpointMD) {
+//   .navigation {
+//     background: $navigationColor;
+//     position: relative; 
+//     z-index: 10000;
+//     ul {
+//       margin: 0; 
+//       padding: 0;
+//       &:after {
+//         content: "";
+//         display: table;
+//         clear: both;
+//       }
+//       li {
+//         list-style: none;
+//         float: left;
+//         position: relative;
+//         &:hover > ul {
+//           display: block;
+//         }
+//         a {
+//           text-decoration: none;
+//           color: #fff;
+//           display: block;
+//           padding: 12px 15px;
+//           &:hover {
+//             color: #fff;
+//             background: lighten($navigationColor, 10%);
+//           }
+//         }
+//         .expand {
+//           display: none;
+//           color: #fff;
+//           font-size: 20px;
+//           position: absolute;
+//           top: 3px;
+//           right: -90%;
+//           cursor: pointer;
+//           transform: translate(0,50%);
+//           &:before {
+//             content: "\f054";
+//             color: #fff;  
+//             font-family: "Font Awesome 5 Free";
+//             font-weight: 900;
+//             display: inline-block;
+//             font-style: normal;
+//             font-variant: normal;
+//             text-rendering: auto;
+//             -webkit-font-smoothing: antialiased;
+//           }
+//         }
+//       }
+//       ul {
+//         display: none;
+//         position: absolute; 
+//         top: 100%; 
+//         left: 0;
+//         li {
+//           float: none;
+//           a {
+//             width: 200%;
+//             background: lighten($navigationColor, 5%);
+//           }
+//           .expand {
+//             display: block;
+//           }
+//         }
+//         ul {
+//           display: none;
+//           top: 0; left: 200%;
+//         }
+//       }
+//     }
+//   }
+//   .navigation-btn {
+//     display: none;
+//   }
+// }
+
+// // Mobile and Down
+// @media (max-width: $breakpointMD) {
+//   body {
+//     margin-top: $buttonSize * 3;
+//     width: 100%;
+//     overflow-x: hidden;
+//     position: relative;
+//     transition: margin-left 0.5s ease;
+//     &.shove {
+//       margin-left: 50%;
+//       width: 100%;
+//       transition: margin-left 0.5s ease;
+//       &:before {
+//         content: "";
+//         display: block;
+//         background: rgba(0,0,0,0.5);
+//         position: absolute; 
+//         top: 0; 
+//         right: 0; 
+//         bottom: 0; 
+//         left: 0; 
+//         z-index: 3;
+//         height: calc(100vh - 60px);
+//       }
+//     }
+//   }
+//   .navigation-btn {
+//     position: fixed; 
+//     top: $buttonSize / 2; 
+//     right: $buttonSize / 2;
+//     font-size: $buttonSize; 
+//     color: #fff; 
+//     text-decoration: none;
+//     background: darken($navigationColor, 10%);
+//     width: $buttonSize * 2; 
+//     height: $buttonSize * 2;
+//     cursor: pointer;
+//     display: block;
+//     &:before, 
+//     &.open:before {
+//       content: "\f0c9";
+//       display: block;
+//       color: #fff;
+//       font-family: "Font Awesome 5 Free";
+//       font-weight: 900;
+//       display: inline-block;
+//       font-style: normal;
+//       font-variant: normal;
+//       text-rendering: auto;
+//       -webkit-font-smoothing: antialiased;
+//       position: absolute;
+//       left: 50%;
+//       top: 50%;
+//       transform: translate(-50%,-50%);
+//     }
+//     &.open:before {
+//       content: "\f00d";
+//     }
+//     span {
+//       font-size: $buttonSize; 
+//       color: #fff;
+//       padding: $buttonSize;
+//       opacity: 0.7;
+//       position: fixed; 
+//       top: -($buttonSize / 5); 
+//       left: 0;
+//     }
+//     &:hover, 
+//     &:active, 
+//     &:focus {
+//       text-decoration: none; 
+//       color: #fff;
+//     }
+//   }
+//   .navigation {
+//     height: $buttonSize * 3;
+//     background: darken($navigationColor, 2%);
+//     position: fixed; 
+//     top: 0; 
+//     left: 0; 
+//     right: 0; 
+//     z-index: 100000;
+//     ul {
+//       visibility: hidden;
+//       width: 100%;
+//       margin: 0; 
+//       padding: 0;
+//       position: fixed; 
+//       top: $buttonSize * 3; 
+//       left: -50%; 
+//       bottom: 0; 
+//       z-index: 2;
+//       overflow-y: auto;
+//       transition: all 0.5s ease;
+//       &.shove {
+//         visibility: visible;
+//         left: 0;
+//         transition: all 0.5s ease;
+//       }
+//       &:before {
+//         content: "";
+//         display: block;
+//         background: darken($navigationColor, 5%);
+//         position: absolute; 
+//         top: 0; 
+//         left: 0; 
+//         right: 50%; 
+//         bottom: 0; 
+//         z-index: 1;
+//       }
+//       li {
+//         list-style: none;
+//         width: 50%;
+//         position: relative; z-index: 2;
+//         a {
+//           color: #fff; 
+//           text-decoration: none; 
+//           font-size: $buttonSize / 1.25; 
+//           line-height: normal;
+//           display: block; 
+//           height: $buttonSize * 3;
+//           width: 100%;
+//           padding: $buttonSize ($buttonSize * 3) $buttonSize $buttonSize;
+//         }
+//         .expand {
+//           display: block;
+//           color: #fff; 
+//           font-size: $buttonSize;
+//           width: $buttonSize * 2.5; 
+//           height: $buttonSize * 3;
+//           background: lighten($navigationColor, 5%);
+//           position: absolute; 
+//           top: 0; 
+//           right: 0;
+//           cursor: pointer;
+//           &:before {
+//             content: "\f054";
+//             display: block;
+//             color: #fff;
+//             font-family: "Font Awesome 5 Free";
+//             font-weight: 900;
+//             display: inline-block;
+//             font-style: normal;
+//             font-variant: normal;
+//             text-rendering: auto;
+//             -webkit-font-smoothing: antialiased;
+//             position: absolute;
+//             left: 50%;
+//             top: 50%;
+//             transform: translate(-50%,-50%);
+//           }
+//         }
+//         &.open-item {
+//           background: lighten($navigationColor, 15%);
+//           .open-item {
+//             .expand {
+
+//               &:before {
+//                 content: "\f077";
+//               }
+//             }
+//           }
+//           ul {
+//             display: block;
+//             visibility: visible;
+//             width: 40%;
+//             margin: 0; 
+//             padding: 0;
+//             background: lighten($navigationColor, 15%);
+//             position: fixed; 
+//             top: $buttonSize * 3; 
+//             left: 50%; 
+//             bottom: 0; 
+//             z-index: 1;
+//             transition: none;
+//             &:before {
+//               display: none;
+//             }
+//             li {
+//               width: 100%;
+//               .expand {
+//                 background: lighten($navigationColor, 5%);
+
+//                 &:before {
+//                   content: "\f078";
+//                 }
+//               }
+//               &.open-item {
+//                 ul {
+//                   display: block;
+//                 }
+//               }
+//             }
+//             ul {
+//               display: none;
+//               width: 100%;
+//               margin: 0; 
+//               padding: 0;
+//               position: relative; 
+//               top: 0; 
+//               left: 0; 
+//               z-index: 1;
+//               li {
+//                 a {
+//                   padding: $buttonSize;
+//                   background: lighten($navigationColor, 5%);
+//                 }
+//               }
+//             }
+//           }
+//           .expand {
+//             background: lighten($navigationColor, 15%);
+
+//             &:before {
+//               content: "\f053";
+//             }
+//           }
+//         }
+//       }
+//       ul {
+//         transition: none;
+//       }
+//     }
+//   }  
+// }

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <meta name="description" content="Bill Calendar" />
+  <meta name="keywords" content="Bill,Calendar">
+  <title>Bill Calendar</title>
+  <link rel="stylesheet" href="assets/css/app.min.css" type="text/css" media="screen, projection" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div class="bc-wrapper">
+    <div class="bc-header">
+      <div class="bc-header-logo-wrap">
+        <button class="bc-header-menu-toggle" aria-hidden="true">
+          <span class="bc-header-menu-icon">
+            <span class="bc-header-menu-icon-bar"></span>
+            <span class="bc-header-menu-icon-bar"></span>
+            <span class="bc-header-menu-icon-bar"></span>
+            <span class="bc-header-menu-icon-text">Menu</span>
+          </span>          
+        </button>
+        <div class="bc-header-logo">
+          <div class="bc-header-logo-icon" aria-hidden="true">
+            <div class="bc-header-logo-icon-tab"></div>
+            <div class="bc-header-logo-icon-tab"></div>
+            <div class="bc-header-logo-icon-calendar">
+              <div class="bc-header-logo-icon-calendar-header"></div>
+              <div class="bc-header-logo-icon-dollar-sign">$</div>
+            </div>
+          </div>
+          <span><strong>Bill</strong>Calendar</span>
+        </div>
+      </div>
+      <div class="bc-header-month-wrap">
+        <span class="bc-header-month-prev"><span>Prev Month</span></span>
+        <span class="bc-header-month">January</span>
+        <span class="bc-header-year">2019</span>
+        <span class="bc-header-month-next"><span>Next Month</span></span>
+      </div>
+      <ul class="bc-header-stats">
+        <li class="bc-header-stats-deposits" data-toggle="tooltip" data-placement="bottom" title="Deposits"><span>1</span></li>
+        <li class="bc-header-stats-savings" data-toggle="tooltip" data-placement="bottom" title="Savings"><span>1</span></li>
+        <li class="bc-header-stats-bills" data-toggle="tooltip" data-placement="bottom" title="Bills"><span>2</span></li>
+        <li class="bc-header-stats-income" data-toggle="tooltip" data-placement="bottom" title="Income"><span>1</span></li>
+      </ul>
+    </div>
+    <div class="bc-calendar">
+      <div class="bc-calendar-header">
+        <div class="bc-calendar-header-day">Sun</div>
+        <div class="bc-calendar-header-day">Mon</div>
+        <div class="bc-calendar-header-day">Tue</div>
+        <div class="bc-calendar-header-day">Wed</div>
+        <div class="bc-calendar-header-day">Thu</div>
+        <div class="bc-calendar-header-day">Fri</div>
+        <div class="bc-calendar-header-day">Sat</div>
+      </div>
+      <div class="bc-calendar-week">
+        <div class="bc-calendar-day bc-calendar-day-prev" data-date="12/30/18">
+          <span class="bc-calendar-day-number">30</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-prev" data-date="12/31/18">
+          <span class="bc-calendar-day-number">31</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/01/19">
+          <span class="bc-calendar-day-number">1</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/02/19">
+          <span class="bc-calendar-day-number">2</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/03/19">
+          <span class="bc-calendar-day-number">3</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/04/19">
+          <span class="bc-calendar-day-number">4</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/05/19">
+          <span class="bc-calendar-day-number">5</span>
+        </div>
+      </div>
+      <div class="bc-calendar-week">
+        <div class="bc-calendar-day" data-date="01/06/19">
+          <span class="bc-calendar-day-number">6</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/07/19">
+          <span class="bc-calendar-day-number">7</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/08/19">
+          <span class="bc-calendar-day-number">8</span>
+          <div class="bc-calendar-day-events-wrap">
+            <div class="bc-calendar-day-events">
+              <span class="badge badge-savings">
+                <span class="price">75.00</span>
+                <span class="item">Savings</span>
+              </span>
+              <span class="badge badge-bill">
+                <span class="price">76.43</span>
+                <span class="item">Duke Energy</span>
+              </span>
+              <span class="badge badge-bill">
+                <span class="price">105.00</span>
+                <span class="item">Comcast</span>
+              </span>
+              <span class="badge badge-deposit">
+                <span class="price">100.00</span>
+                <span class="item">Deposit</span>
+              </span>
+              <span class="badge badge-total">
+                <span class="price">156.43</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="bc-calendar-day" data-date="01/09/19">
+          <span class="bc-calendar-day-number">9</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/10/19">
+          <span class="bc-calendar-day-number snowball">10</span>
+          <div class="bc-calendar-day-events-wrap">
+            <div class="bc-calendar-day-events">
+              <span class="badge badge-total snowball">
+                <span class="price">156.43</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="bc-calendar-day" data-date="01/11/19">
+          <span class="bc-calendar-day-number">11</span>
+          <div class="bc-calendar-day-income-wrap">
+            <div class="bc-calendar-day-income">
+              <span class="badge badge-income">
+                <span class="price">2332.52</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="bc-calendar-day" data-date="01/12/19">
+          <span class="bc-calendar-day-number">12</span>
+        </div>
+      </div>
+      <div class="bc-calendar-week">
+        <div class="bc-calendar-day" data-date="01/13/19">
+          <span class="bc-calendar-day-number">13</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/14/19">
+          <span class="bc-calendar-day-number">14</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/15/19">
+          <span class="bc-calendar-day-number">15</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/16/19">
+          <span class="bc-calendar-day-number">16</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/17/19">
+          <span class="bc-calendar-day-number">17</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/18/19">
+          <span class="bc-calendar-day-number">18</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/19/19">
+          <span class="bc-calendar-day-number">19</span>
+        </div>
+      </div>
+      <div class="bc-calendar-week">
+        <div class="bc-calendar-day" data-date="01/20/19">
+          <span class="bc-calendar-day-number">20</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/21/19">
+          <span class="bc-calendar-day-number">21</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/22/19">
+          <span class="bc-calendar-day-number">22</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/23/19">
+          <span class="bc-calendar-day-number">23</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/24/19">
+          <span class="bc-calendar-day-number">24</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/25/19">
+          <span class="bc-calendar-day-number">25</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/26/19">
+          <span class="bc-calendar-day-number">26</span>
+        </div>
+      </div>
+      <div class="bc-calendar-week">
+        <div class="bc-calendar-day" data-date="01/27/19">
+          <span class="bc-calendar-day-number">27</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/28/19">
+          <span class="bc-calendar-day-number">28</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/29/19">
+          <span class="bc-calendar-day-number">29</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/30/19">
+          <span class="bc-calendar-day-number">30</span>
+        </div>
+        <div class="bc-calendar-day" data-date="01/31/19">
+          <span class="bc-calendar-day-number">31</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/01/19">
+          <span class="bc-calendar-day-number">1</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/02/19">
+          <span class="bc-calendar-day-number">2</span>
+        </div>
+      </div>
+      <div class="bc-calendar-week">
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/03/19">
+          <span class="bc-calendar-day-number">3</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/04/19">
+          <span class="bc-calendar-day-number">4</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/05/19">
+          <span class="bc-calendar-day-number">5</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/06/19">
+          <span class="bc-calendar-day-number">6</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/07/19">
+          <span class="bc-calendar-day-number">7</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/08/19">
+          <span class="bc-calendar-day-number">8</span>
+        </div>
+        <div class="bc-calendar-day bc-calendar-day-next" data-date="02/09/19">
+          <span class="bc-calendar-day-number">9</span>
+        </div>
+      </div>
+    </div>
+    <div class="bc-mobile-list hidden">
+      <div class="bc-mobile-list-date"></div>
+      <div class="bc-mobile-list-items"></div>
+      <div class="bc-mobile-list-actions">
+        <button class="btn btn-dark bc-mobile-list-close">Close</button>
+        <button class="btn btn-primary bc-mobile-list-add">Add</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/app.min.js"></script>
+</body>
+</html>

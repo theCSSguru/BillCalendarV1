@@ -1,0 +1,11 @@
+// Base
+html {
+  font-size: 16px;
+}
+body {
+  @extend %scrollbar;
+  background-color: $brandDark;
+}
+.hidden {
+  display: none !important;
+}
